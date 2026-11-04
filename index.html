@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>A Digital Love Surprise for AA FAJAR ❤️</title>
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Ambient Light & Hologram Layers -->
+  <div class="ambient-glow"></div>
+  <div class="hologram-overlay"></div>
+  <div class="vignette"></div>
+
+  <!-- Background Music Element -->
+  <audio id="bgMusic" src="public/audio/romantic-song.mp3" preload="auto" loop playsinline></audio>
+
+  <!-- Floating Audio Controller (Top Right) -->
+  <div class="audio-controller" id="audio-controller" role="region" aria-label="Music Controller">
+    <button class="audio-btn" id="btn-toggle-music" aria-label="Play / Pause Musik" title="Putar / Jeda Musik">
+      <div class="audio-bars playing" id="audio-bars">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </button>
+
+    <div class="volume-wrapper" title="Atur Volume Musik">
+      <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.01" value="0.45"
+        aria-label="Volume Musik">
+    </div>
+  </div>
+
+  <!-- Interactive 2D Word Heart Canvas -->
+  <canvas id="heartCanvas"></canvas>
+
+  <!-- Main UI Stage -->
+  <main class="stage">
+
+    <!-- ========================================================
+         ADEGAN 1: OPEN YOUR SURPRISE
+         ======================================================== -->
+    <section class="scene-opening" id="scene-opening">
+      <div class="opening-badge">
+        <span class="dot"></span>
+        <span>A SPECIAL MESSAGE</span>
+      </div>
+
+      <p class="opening-subtitle">"A little surprise for you..."</p>
+
+      <button class="btn-neon" id="btn-open">
+        <span>BUKA HADIAH</span>
+        <span class="btn-heart">❤️</span>
+      </button>
+    </section>
+
+    <!-- ========================================================
+         OVERLAY MESSAGES CONTAINER
+         ======================================================== -->
+    <div class="message-container">
+
+      <!-- ====================================================
+           ADEGAN 4: MAIN LOVE MESSAGE
+           ==================================================== -->
+      <article class="message-card" id="msg-scene4" aria-live="polite">
+        <div class="text-halo">
+          <span class="serif-sub">I LOVE YOU</span>
+          <h2 class="serif-title">SAYANGKU GANTENGKU</h2>
+          <h1 class="serif-name">AA FAJAR MAULANA YUSUF</h1>
+        </div>
+      </article>
+
+      <!-- ====================================================
+           ADEGAN 5: SPECIAL LOVE MESSAGE
+           ==================================================== -->
+      <article class="message-card" id="msg-scene5" aria-live="polite">
+        <div class="text-halo">
+          <h2 class="serif-title">
+            I LOVE YOU, SAYANGKU GANTENGKU
+            <span class="text-heart">❤️</span>
+          </h2>
+          <h1 class="serif-name">AA FAJAR MAULANA YUSUF</h1>
+        </div>
+      </article>
+
+      <!-- ====================================================
+           ADEGAN 6: PESAN PENYEMANGAT UNTUK AA FAJAR
+           ==================================================== -->
+      <article class="message-card" id="msg-scene6" aria-live="polite">
+        <div class="letter-box">
+          <div class="letter-header">
+            <div class="letter-tag">
+              <span>SPECIAL LETTER</span>
+              <span>•</span>
+              <span>FOR AA FAJAR</span>
+            </div>
+            <div class="letter-counter" id="letter-counter">1 / 4</div>
+          </div>
+
+          <div class="letter-body">
+            <!-- Paragraph 1 -->
+            <p class="letter-paragraph active highlight" data-index="0">
+              Semangat bimbingannya besok yaa, sayangku. <span class="text-heart">❤️</span>
+            </p>
+
+            <!-- Paragraph 2 -->
+            <p class="letter-paragraph" data-index="1">
+              Apa pun hasilnya, aku tetap bangga sama kamu. Aku tahu kamu sudah berusaha sejauh ini. Jangan lupa
+              istirahat yang cukup dan percaya sama diri sendiri, yaa.
+            </p>
+
+            <!-- Paragraph 3 -->
+            <p class="letter-paragraph" data-index="2">
+              Aku akan selalu mendukung setiap langkahmu dan mendoakan yang terbaik untukmu.
+            </p>
+
+            <!-- Paragraph 4 -->
+            <p class="letter-paragraph highlight" data-index="3">
+              I love you, gantengku. <span class="text-heart">❤️</span>
+            </p>
+          </div>
+
+          <div class="letter-footer">
+            <div class="letter-dots" id="letter-dots">
+              <span class="letter-dot active" data-index="0"></span>
+              <span class="letter-dot" data-index="1"></span>
+              <span class="letter-dot" data-index="2"></span>
+              <span class="letter-dot" data-index="3"></span>
+            </div>
+
+            <button class="letter-nav-btn" id="btn-letter-next">
+              LANJUT ❯
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- JavaScript Modules -->
+  <script src="js/heart.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
